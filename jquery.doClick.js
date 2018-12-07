@@ -24,9 +24,9 @@
                 clickDelay: 300,
                 /**
                  * 点击事件回调
-                 * @param self：自身dom对象
+                 * @param this：自身dom对象
                  */
-                onClick: function (self) {
+                onClick: function () {
                 },
                 /**
                  * 双击回调事件
@@ -50,11 +50,11 @@
                             var time = $(self).attr("data-sum");
                             if (time > 1) {
                                 // 双击
-                                p.dbClick(self);
+                                p.dbClick.call(self);
                                 timer = null;
                             } else {
                                 // 单击
-                                p.onClick(self);
+                                p.onClick.call(self);
                                 timer = null;
                             }
                             $(self).attr("data-sum", 0);
