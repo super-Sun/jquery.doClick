@@ -40,14 +40,15 @@
             }
             return this.each(function () {
                 var timer = null;
+                var count = 0
                 $(this).on("click", function () {
                     var self = this;
-                    var sum = $(this).attr("data-sum") || 0;
+                    var sum = count;
                     sum = +sum + 1;
-                    $(this).attr("data-sum", sum);
+                    count = sum;
                     if (timer == null) {
                         timer = setTimeout(function () {
-                            var time = $(self).attr("data-sum");
+                            var time = count;
                             if (time > 1) {
                                 // 双击
                                 p.dbClick.call(self);
@@ -57,7 +58,7 @@
                                 p.onClick.call(self);
                                 timer = null;
                             }
-                            $(self).attr("data-sum", 0);
+                            count = 0;
                         }, p.clickDelay)
                     }
                 });
