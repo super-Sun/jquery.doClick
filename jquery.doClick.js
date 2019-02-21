@@ -15,6 +15,7 @@
  */
 (function ($) {
     var methods = {
+        // 初始化
         init: function (options) {
             var p = {
                 /**
@@ -63,6 +64,11 @@
                     }
                 });
             });
+        },
+        // 实例销毁
+        destroy: function () {
+            var $el = $(this);
+            $el.off('click');
         }
     };
     $.fn.doClick = function (method) {
