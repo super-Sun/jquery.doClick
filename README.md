@@ -20,3 +20,7 @@ jquery.doClick：为元素同时绑定单击事件和双击事件。
         }
     })
 ```
+# 实例销毁
+```javascript
+    $(dom).doClick('destroy')
+```
