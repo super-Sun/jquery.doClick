@@ -44,9 +44,7 @@
                 var count = 0
                 $(this).on("click", function () {
                     var self = this;
-                    var sum = count;
-                    sum = +sum + 1;
-                    count = sum;
+                    count++;
                     if (timer == null) {
                         timer = setTimeout(function () {
                             var time = count;
